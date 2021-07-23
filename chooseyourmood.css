@@ -1,0 +1,204 @@
+@font-face {
+  font-family: 'Erotique Alternate Trial';
+  src: url('../fonts/Erotique-Alternate-Bold-trial.ttf');
+}
+
+/* Keyframes intro */
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translate(0, 24px) scale(0.95);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes intro-box {
+  0% {
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes grow-box {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    width: 360px;
+    height: 200px;
+  }
+  100% {
+    width: 95vw;
+    height: 95vh;
+    border-color: transparent;
+  }
+}
+/* Keyframes text */
+
+@keyframes tracking-in-expand-fwd {
+  0% {
+    -webkit-transform: translateZ(-700px);
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  30%,
+  80% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.tracking-in-expand-fwd {
+  -webkit-animation: tracking-in-expand-fwd 5s 8s cubic-bezier(0.9, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand-fwd 5s 8s cubic-bezier(0.9, 0.61, 0.355, 1) both;
+}
+
+@keyframes question {
+  0% {
+    -webkit-transform: translateZ(-700px);
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+.question {
+  -webkit-animation: question 5s 6s cubic-bezier(0.9, 0.61, 0.355, 1) both;
+  animation: question 5s 6s cubic-bezier(0.9, 0.61, 0.355, 1) both;
+}
+
+/* Intro Animation */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: intro-box 1s 4s both;
+}
+
+.box {
+  width: 360px;
+  height: 200px;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  animation: grow-box 3s 1s both;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Main content */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+  font-family: 'Erotique Alternate Trial';
+  color: white;
+  font-size: 36px;
+}
+.app {
+  height: 100vh;
+  display: flex;
+}
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10;
+}
+
+.intro-text {
+  position: absolute;
+  width: 100vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+  font-size: 64px;
+  text-align: center;
+  color: rgb(80, 87, 69);
+  line-height: normal;
+}
+
+audio {
+  opacity: 0.1;
+  transition: all 0.5s ease;
+  position: absolute;
+  width: 30vw;
+  bottom: 0;
+  left: 35vw;
+}
+
+audio:hover {
+  opacity: 0.8;
+}
+
+.intro-text button {
+  cursor: pointer;
+  font-family: 'Erotique Alternate Trial';
+  color: rgb(85, 79, 77);
+  background: none;
+  border: 1px solid rgb(85, 79, 77);
+  border-radius: 25px;
+  font-size: 24px;
+  transition: all 0.7s ease;
+  margin-bottom: 2%;
+  padding: 15px 25px;
+}
+
+.intro-text button:hover {
+  color: white;
+  background-color: rgb(85, 79, 77);
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.7s ease;
+}
+
+.video-container1 {
+  display: none;
+}

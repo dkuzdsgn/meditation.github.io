@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./chooseyourmood.css" type="text/css" rel="stylesheet" />
+    <title>meditatation time</title>
+  </head>
+
+  <body>
+    <audio controls autoplay>
+      <source src="./sounds/background.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="intro">
+      <div class="box">
+        <div class="column">
+          <span>meditate</span>
+          <span>breath</span>
+        </div>
+        <div class="column">
+          <span>relax</span>
+          <span>enjoy</span>
+        </div>
+      </div>
+    </div>
+    <div class="app">
+      <div class="video-container">
+        <video loop autoplay controls muted>
+          <source src="./video/background.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <section class="intro-text">
+        <p class="question">How would you like to feel now?</p>
+        <br />
+        <a href="./relaxation.html"><button class="question">Calm & Relaxed</button></a>
+        <a href="./nature.html"><button class="question">Alone with yourself</button></a>
+        <a href="./happiness.html"><button class="question">Happy</button></a>
+      </section>
+    </div>
+  </body>
+</html>

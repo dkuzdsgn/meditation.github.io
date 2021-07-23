@@ -1,0 +1,234 @@
+@font-face {
+  font-family: 'Erotique Text';
+  src: url('../fonts/ErotiqueTextRegular.ttf');
+}
+/* Intro animation keyframes*/
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translate(0, 24px) scale(0.95);
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes intro-box {
+  0% {
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes grow-box {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    width: 360px;
+    height: 200px;
+  }
+  100% {
+    width: 95vw;
+    height: 95vh;
+    border-color: transparent;
+  }
+}
+/* Intro Animation */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: intro-box 1s 4s both;
+}
+.box {
+  width: 360px;
+  height: 200px;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  animation: grow-box 3s 1s both;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+span {
+  color: white;
+}
+/* Main content */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+  font-family: 'Erotique Alternate Trial';
+  color: rgb(85, 79, 77);
+  font-size: 36px;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10;
+}
+
+.intro-text {
+  position: absolute;
+  width: 100vw;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo {
+  top: 20px;
+  position: absolute;
+  width: 100%;
+}
+a {
+  color: rgb(85, 79, 77);
+  font-size: 72px;
+  text-align: center;
+  line-height: normal;
+  text-decoration: none;
+  transition: all 0.7s ease;
+}
+a:hover {
+  color: rgb(131, 96, 107);
+}
+header {
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  min-height: 130px;
+}
+.time,
+.sound {
+  top: 10vh;
+  height: 90vh;
+  width: 20vw;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.sound {
+  position: absolute;
+  right: 0;
+}
+.player {
+  margin: 0;
+  top: 10vh;
+  left: 20vw;
+  width: 60vw;
+  height: 90vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quote {
+  line-height: normal;
+  text-align: center;
+  position: relative;
+  font-size: 64px;
+  margin-bottom: 48px;
+}
+.time-display {
+  font-family: 'Erotique Text';
+  position: relative;
+  margin-top: 36px;
+  font-weight: 100;
+  font-size: 36px;
+}
+.replay {
+  position: absolute;
+  top: 90%;
+  color: #554f4d;
+}
+.play {
+  transition: all 0.7s ease;
+  width: 36px;
+  height: 36px;
+}
+.replay,
+.play {
+  cursor: pointer;
+}
+
+/* Buttons */
+
+.time-select button,
+.sound-picker button {
+  margin-left: 38px;
+  margin-right: 38px;
+  color: rgb(85, 79, 77);
+  font-family: 'Erotique Text';
+  width: auto;
+  height: auto;
+  padding: 8px;
+  margin-bottom: 24px;
+  background: none;
+  border: 1px solid rgb(85, 79, 77);
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 24px;
+  transition: all 0.7s ease;
+}
+
+.time-select button:hover,
+.sound-picker button:hover {
+  color: white;
+  background-color: rgb(85, 79, 77);
+}
+@media screen and (max-width: 1200px) {
+  .time-select button,
+  .sound-picker button {
+    font-size: 18px;
+    width: 100px;
+  }
+  .quote {
+    font-size: 56px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .quote {
+    font-size: 36px;
+  }
+}
